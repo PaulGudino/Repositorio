@@ -2,25 +2,23 @@
 	font-family: 'Poppins', sans-serif;
 	font-weight: 100;
 }
+h1{
+	font-family: 'Anton', sans-serif;
+}
 :root {
-  --nav-letra: #fff
+  --nav-letra: #D20101;
+  --nav-letra-sombreada: #7E9EB6;
 }
 .header{
-	background-color: #00a9e0;
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
+	height: 150px;
+	display: flex;
+}
+.container_logo{
+	min-width: 200px;
 }
 .logo{
-	width: 200px;
-	height: 200px;
-	background-color: #fff;
-	border-radius: 25%;
-	overflow: hidden;
-	float: top;
+	width: 150px;
 	margin: auto;
-	margin-top: 15px;
 }
 .logo img{
 	width: 100%;
@@ -29,28 +27,30 @@
 	padding: 10px;
 }
 .nav{
+	flex: 1;
 	display: flex;
 	padding: 25px;
 	justify-content: space-around;
 }
 .nav_ul{
 	display: flex;
-	flex-grow: 1;
+	flex: 1;
+	margin: auto;
 }
 .nav_li{
-	font-size: 1.5em;
+	font-size: 2em;
 	display: inline-block;
 	flex: 1;
 	padding: 12px;
 	color: var(--nav-letra);
-	min-width: 200px;
+	min-width: 100px;
 	text-align: center;	
 }
 .nav_li:hover > a{
-	color: #bbb
+	color: var(--nav-letra-sombreada);
 }
 .nav_li:hover{
-	color: #bbb
+	color: var(--nav-letra-sombreada);
 }
 .nav_li a{
 	color: var(--nav-letra);
@@ -60,4 +60,32 @@
 	box-sizing: border-box;
 	text-align: center;
 	margin: 5px;
+}
+.portada{
+	background-image: url("https://www.grupobustos.com/wp-content/uploads/2018/07/ferreteria-industrial-03.jpg") ;
+	padding: 75px 50px;
+	text-align: center;
+	background-position:center ;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+.portada:before{
+	content: "";
+	position: absolute;
+	background-color: var(--nav-letra-sombreada);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: .6;
+}
+.portada h1{
+	font-size: 8em;
+	color: #fff;
+	position: relative;
+}
+.texto_prueba{
+	font-size: 2em;
 }
