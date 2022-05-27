@@ -2,16 +2,25 @@
 	font-family: 'Poppins', sans-serif;
 	font-weight: 100;
 }
+body{
+	display: grid;
+	min-height: 100vh;
+	grid-template-rows: auto 1fr auto;
+}
 h1{
 	font-family: 'Anton', sans-serif;
 }
 :root {
   --nav-letra: #D20101;
-  --nav-letra-sombreada: #7E9EB6;
+  --nav-letra-sombreada: #96aab7;
+  --color-letra-normal: #fff;
 }
 .header{
 	height: 150px;
 	display: flex;
+}
+.nav_responsive-ul{
+	display: none;
 }
 .container_logo{
 	min-width: 200px;
@@ -46,6 +55,19 @@ h1{
 	min-width: 100px;
 	text-align: center;	
 }
+.nav_button-container{
+	color: var(--color-letra-normal);
+	font-size: 0.7em;
+	margin: auto;
+	background: var(--nav-letra);
+	display: none;
+}
+.nav_button{
+		color: var(--color-letra-normal);
+		background: none;
+		border: none;		
+		font-size: 20px;
+}
 .nav_li:hover > a{
 	color: var(--nav-letra-sombreada);
 }
@@ -69,7 +91,6 @@ h1{
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-
 }
 .portada:before{
 	content: "";
@@ -82,10 +103,289 @@ h1{
 	opacity: .6;
 }
 .portada h1{
+	height: 100px;
 	font-size: 8em;
 	color: #fff;
 	position: relative;
 }
-.texto_prueba{
-	font-size: 2em;
+article{
+	display: flex;
+	height: 500px;
+}
+.article_marcas{
+	min-width: 500px;
+	height: 500px;
+	flex: 1;
+}
+.title_marcas{
+	height: 100px;
+	display: flex;
+}
+.title_marcas h2{
+	font-size: 3em;
+	color: var(--nav-letra-sombreada);
+	margin: auto;
+}
+.container_marcas{ 
+	height: 400px;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-evenly;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.container_marcas::-webkit-scrollbar { 
+  display: none;
+}
+.marcas{
+	margin: 15px;
+	height: 150px;
+	width: 150px;
+	display: flex;
+}
+.marcas img{
+	margin: auto;
+}
+.article_oferta{
+	min-width: 500px;
+	height: 500px;
+	flex: 1;
+}
+.title_oferta{
+	height: 100px;
+	display: flex;
+}
+.title_oferta h2{
+	font-size: 3em;
+	color: var(--nav-letra-sombreada);
+	margin: auto;
+}
+.container_oferta{ 
+	height: 400px;
+	padding: 35px;
+	display: flex;
+}
+.table_oferta{
+	font-size: 1.5em;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+th, td{
+	 width: 25%;
+	 border: none;
+}
+.bg_celda_rojo{
+	background: var(--nav-letra);
+}
+.bg_celda_gris{
+	background: var(--nav-letra-sombreada);
+}
+footer{
+	background: var(--nav-letra-sombreada);
+	height: 200px;
+	box-sizing: border-box;
+	display: flex;
+}
+.title_redes{
+	font-size: 1.5em;
+	padding-top: 25px;
+	text-align: center;
+	color: var(--nav-letra);
+}
+.ft_social{
+	display: inline-block;
+	width: 33%;
+	flex: 1;
+}
+.redes_sociales_ul{
+	display: flex;
+	flex: 1;
+}
+.redes_sociales{
+	display: inline-block;
+	padding: 12px;
+	margin: auto;
+}
+.redes_sociales a{
+	margin: auto;
+	color: var(--color-letra-normal);
+	text-decoration: none;
+	font-size: 50px;
+}
+.redes_sociales:hover > a{
+	color: var(--nav-letra);
+}
+.ft_logo{
+	display: flex;
+	width: 34%;
+	height: 150px;
+	flex: 1;
+	margin: auto;
+}
+.ft_logo img{
+	margin: auto;
+	height: 100%;
+	object-fit: contain;
+}
+.ft_contact{
+	display: flex;
+	width: 33%;
+	flex: 1;
+}
+.ft_contact a{
+	text-decoration: none;
+	color: var(--color-letra-normal);
+}
+.ft_contact button{
+	margin: auto;
+	background: var(--nav-letra);
+	padding: 25px;
+	border-radius: 25px;
+	border: none;		
+	font-size: 20px;
+}
+@media only screen and (max-width: 800px){
+	.header{
+		height: 100px;
+		display: block;
+		box-sizing: border-box;
+	}
+	.container_logo{
+		display: flex;
+	}
+	.logo{
+		height: 80px;
+		margin: auto;
+	}
+	.nav{
+		height: 20px;
+	}
+	.nav_button-container{
+		display: flex;
+		height: 20px;
+		justify-content: space-between;
+	}
+	.nav_button-container h2{
+		flex: 1;
+		width: 80%;
+		text-align: center;
+	}
+	.nav_button{
+		flex: 1;
+		width: 20%;
+	}
+	.nav_ul{
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.5em;
+		background-color: var(--nav-letra);
+		position: fixed;
+		left: 0;
+		top: 100px;
+		width: 100%;
+		padding: 20px 0;
+		height: calc(100% - 100px);
+		overflow-y: auto;
+		left: 100%;
+		z-index: 1;
+	}
+	.nav_li, .nav_li a{
+		color: var(--color-letra-normal);
+	}
+	.nav_visible{
+		left: 0;
+	}
+	.portada{
+		height: 200px;
+		padding: 10px 25px;
+	}	
+	.portada h1{
+		height: 40px;
+		font-size: 4.5em;
+	}
+	article{
+		flex-direction: column;
+		height: 600px;
+	}
+	.article_marcas{
+		min-width: 100%;
+		height: 250px;
+	}
+	.title_marcas{
+		height: 100px;
+	}
+	.title_marcas h2{
+		font-size: 2em;
+	}
+	.container_marcas{ 
+		height: 200px;
+	}
+	.marcas{
+		margin: 7px;
+		height: 75px;
+		width: 75px;
+	}
+	.article_marcas{
+		margin-bottom: 25px;
+	}
+	.title_oferta h2{
+		font-size: 2em;
+	}
+	.container_oferta{ 
+		height: 200px;
+	}
+	.table_oferta{
+		font-size: 1em;
+	}
+	footer{
+	background: var(--nav-letra-sombreada);
+	height: 200px;
+	box-sizing: border-box;
+	display: flex;
+	}
+	.title_redes{
+		font-size: 1.5em;
+		padding-top: 25px;
+		text-align: center;
+		color: var(--nav-letra);
+	}
+	.ft_social{
+		display: inline-block;
+		width: 33%;
+		flex: 1;
+	}
+	.redes_sociales_ul{
+		display: flex;
+		flex: 1;
+	}
+	.redes_sociales{
+		display: inline-block;
+		padding: 12px;
+		margin: auto;
+	}
+	.redes_sociales a{
+		margin: auto;
+		color: var(--color-letra-normal);
+		text-decoration: none;
+		font-size: 50px;
+	}
+	.redes_sociales:hover > a{
+		color: var(--nav-letra);
+	}
+	.ft_logo{
+		height: 100px;
+	}
+	.ft_contact button{
+		padding: 13px;
+		border-radius: 25px;	
+		font-size: 10px;
+	}
+	.redes_sociales a{
+		font-size: 25px;
+	}
+	.title_redes{
+		font-size: 1em;
+		padding-top: 50px;
+	}
 }
