@@ -1,0 +1,286 @@
+*{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 100;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+h1{
+	font-family: 'Anton', sans-serif;
+}
+:root {
+  --color-principal: #D20101;
+  --color-secundaria: #96aab7;
+  --color-bl: #fff;
+}
+.header{
+	height: 150px;
+	display: flex;
+}
+.nav_responsive-ul{
+	display: none;
+}
+.container_logo{
+	min-width: 200px;
+}
+.logo{
+	width: 150px;
+	margin: auto;
+}
+.logo img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 10px;
+}
+.nav{
+	flex: 1;
+	display: flex;
+	padding: 25px;
+	justify-content: space-around;
+}
+.nav_ul{
+	display: flex;
+	flex: 1;
+	margin: auto;
+}
+.nav_li{
+	font-size: 2em;
+	display: inline-block;
+	flex: 1;
+	padding: 12px;
+	color: var(--color-principal);
+	min-width: 100px;
+	text-align: center;	
+}
+.nav_button-container{
+	color: var(--color-bl);
+	font-size: 0.7em;
+	margin: auto;
+	background: var(--color-principal);
+	display: none;
+}
+.nav_button{
+		color: var(--color-bl);
+		background: none;
+		border: none;		
+		font-size: 20px;
+}
+.nav_li:hover > a{
+	color: var(--color-secundaria);
+}
+.nav_li:hover{
+	color: var(--color-secundaria);
+}
+.nav_li a{
+	color: var(--color-principal);
+	text-decoration: none;
+}
+.nav_li i{
+	box-sizing: border-box;
+	text-align: center;
+	margin: 5px;
+}
+.portada{
+	background-image: url("https://www.grupobustos.com/wp-content/uploads/2018/07/ferreteria-industrial-03.jpg") ;
+	padding: 75px 50px;
+	text-align: center;
+	background-position:center ;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.portada:before{
+	content: "";
+	position: absolute;
+	background-color: var(--color-secundaria);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: .6;
+}
+.portada h1{
+	height: 100px;
+	font-size: 8em;
+	color: var(--color-bl);
+	position: relative;
+}
+
+footer{
+	background: var(--color-secundaria);
+	height: 200px;
+	box-sizing: border-box;
+	display: flex;
+	margin-top: auto;
+}
+.title_redes{
+	font-size: 1.5em;
+	padding-top: 25px;
+	text-align: center;
+	color: var(--color-principal);
+}
+.ft_social{
+	display: inline-block;
+	width: 33%;
+	flex: 1;
+}
+.redes_sociales_ul{
+	display: flex;
+	flex: 1;
+}
+.redes_sociales{
+	display: inline-block;
+	padding: 12px;
+	margin: auto;
+}
+.redes_sociales a{
+	margin: auto;
+	color: var(--color-bl);
+	text-decoration: none;
+	font-size: 50px;
+}
+.redes_sociales:hover > a{
+	color: var(--color-principal);
+}
+.ft_logo{
+	display: flex;
+	width: 34%;
+	height: 150px;
+	flex: 1;
+	margin: auto;
+}
+.ft_logo img{
+	margin: auto;
+	height: 100%;
+	object-fit: contain;
+}
+.ft_contact{
+	display: flex;
+	width: 33%;
+	flex: 1;
+}
+.ft_contact a{
+	text-decoration: none;
+	color: var(--color-bl);
+}
+.ft_contact button{
+	margin: auto;
+	background: var(--color-principal);
+	padding: 25px;
+	border-radius: 25px;
+	border: none;		
+	font-size: 20px;
+}
+@media only screen and (max-width: 800px){
+	.header{
+		height: 100px;
+		display: block;
+		box-sizing: border-box;
+	}
+	.container_logo{
+		display: flex;
+	}
+	.logo{
+		height: 80px;
+		margin: auto;
+	}
+	.nav{
+		height: 20px;
+	}
+	.nav_button-container{
+		display: flex;
+		height: 20px;
+		justify-content: space-between;
+	}
+	.nav_button-container h2{
+		flex: 1;
+		width: 80%;
+		text-align: center;
+	}
+	.nav_button{
+		flex: 1;
+		width: 20%;
+	}
+	.nav_ul{
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.5em;
+		background-color: var(--color-principal);
+		position: fixed;
+		left: 0;
+		top: 100px;
+		width: 100%;
+		padding: 20px 0;
+		height: calc(100% - 100px);
+		overflow-y: auto;
+		left: 100%;
+		z-index: 1;
+	}
+	.nav_li, .nav_li a{
+		color: var(--color-bl);
+	}
+	.nav_visible{
+		left: 0;
+	}
+	.portada{
+		height: 200px;
+		padding: 10px 25px;
+	}	
+	.portada h1{
+		height: 40px;
+		font-size: 4.5em;
+	}
+	footer{
+		background: var(--color-secundaria);
+		height: 200px;
+		box-sizing: border-box;
+		display: flex;
+	}
+	.title_redes{
+		font-size: 1.5em;
+		padding-top: 25px;
+		text-align: center;
+		color: var(--color-principal);
+	}
+	.ft_social{
+		display: inline-block;
+		width: 33%;
+		flex: 1;
+	}
+	.redes_sociales_ul{
+		display: flex;
+		flex: 1;
+	}
+	.redes_sociales{
+		display: inline-block;
+		padding: 12px;
+		margin: auto;
+	}
+	.redes_sociales a{
+		margin: auto;
+		color: var(--color-bl);
+		text-decoration: none;
+		font-size: 50px;
+	}
+	.redes_sociales:hover > a{
+		color: var(--color-principal);
+	}
+	.ft_logo{
+		height: 100px;
+	}
+	.ft_contact button{
+		padding: 13px;
+		border-radius: 25px;	
+		font-size: 10px;
+	}
+	.redes_sociales a{
+		font-size: 25px;
+	}
+	.title_redes{
+		font-size: 1em;
+		padding-top: 50px;
+	}
+}
