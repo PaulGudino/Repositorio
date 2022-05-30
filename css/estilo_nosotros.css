@@ -84,7 +84,7 @@ h1{
 	margin: 5px;
 }
 .portada{
-	background-image: url("https://www.grupobustos.com/wp-content/uploads/2018/07/ferreteria-industrial-03.jpg") ;
+	background-image: url("https://pbs.twimg.com/media/E8qFkONXoAIMwMD?format=jpg&name=small") ;
 	padding: 75px 50px;
 	text-align: center;
 	background-position:center ;
@@ -108,7 +108,28 @@ h1{
 	color: var(--color-bl);
 	position: relative;
 }
-
+.container_descripcion{
+	display: flex;
+}
+.descripcion_estilo{
+	flex: 1;
+	margin: 15px 20px;
+}
+.des_est_principal h2{
+	background-color: var(--color-principal);
+}
+.des_est_secundario h2{
+	background-color: var(--color-secundaria);
+}
+.descripcion_estilo h2{
+	padding: 12px 0px;
+	text-align: center;
+	color: var(--color-bl);
+}
+.descripcion_estilo p{
+	text-align: justify;
+	padding: 10px 20px
+}
 footer{
 	background: var(--color-secundaria);
 	height: 200px;
@@ -227,11 +248,27 @@ footer{
 	}
 	.portada{
 		height: 200px;
-		padding: 10px 25px;
+		padding: 15px 25px;
 	}	
 	.portada h1{
 		height: 40px;
 		font-size: 4.5em;
+	}
+	.container_descripcion{
+		flex-direction: column;
+	}
+	.descripcion_estilo{
+		flex: 1;
+		margin: 15px 20px;
+	}
+	.descripcion_estilo h2{
+		padding: 12px 0px;
+		text-align: center;
+		color: var(--color-bl);
+	}
+	.descripcion_estilo p{
+		text-align: justify;
+		padding: 10px 20px
 	}
 	footer{
 		background: var(--color-secundaria);

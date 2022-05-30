@@ -84,7 +84,7 @@ h1{
 	margin: 5px;
 }
 .portada{
-	background-image: url("https://www.grupobustos.com/wp-content/uploads/2018/07/ferreteria-industrial-03.jpg") ;
+	background-image: url("https://www.herramientasyaccesorios.com/slider/2.jpg") ;
 	padding: 75px 50px;
 	text-align: center;
 	background-position:center ;
@@ -108,7 +108,32 @@ h1{
 	color: var(--color-bl);
 	position: relative;
 }
-
+.container_productos{ 
+	margin-top: 10px;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-evenly;
+}
+.productos{
+	margin: 15px;
+	width: 300px;
+	height: 200px;
+}
+.productos h2{
+	background-color: var(--color-principal);
+	padding: 12px 5px;
+	text-align: center;
+	color: var(--color-bl);
+}
+.productos img{
+	height: 70%;
+	object-fit: contain;
+	margin-top: 10px;
+	margin-left: 20%;
+}
+.productos:hover{
+	box-shadow: 0px 20px 20px -12px var(--color-secundaria);
+}
 footer{
 	background: var(--color-secundaria);
 	height: 200px;
