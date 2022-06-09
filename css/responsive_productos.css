@@ -3,6 +3,7 @@
 		height: 100px;
 		display: block;
 		box-sizing: border-box;
+		margin-bottom: 25px;
 	}
 	.container_logo{
 		display: flex;
@@ -16,8 +17,9 @@
 	}
 	.nav_button-container{
 		display: flex;
-		height: 20px;
+		height: 40px;
 		justify-content: space-between;
+		padding: 10px 0;
 	}
 	.nav_button-container h2{
 		flex: 1;
@@ -35,7 +37,7 @@
 		background-color: var(--color-principal);
 		position: fixed;
 		left: 0;
-		top: 100px;
+		top: 120px;
 		width: 100%;
 		padding: 20px 0;
 		height: calc(100% - 100px);
@@ -52,10 +54,24 @@
 	.portada{
 		height: 200px;
 		padding: 10px 25px;
+	}
+	.productos{
+		width: 200px;
+		height: 150px;
 	}	
 	.portada h1{
 		height: 40px;
 		font-size: 4.5em;
+	}
+	.productos img{
+		height: 57%;
+		object-fit: contain;
+		margin-top: 10px;
+		margin-left: 20%;
+	}
+	.productos h2{
+		font-size: 1.2rem;
+		padding: 7px 5px;
 	}
 	footer{
 		background: var(--color-secundaria);

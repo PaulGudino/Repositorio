@@ -3,6 +3,7 @@
 		height: 100px;
 		display: block;
 		box-sizing: border-box;
+		margin-bottom: 25px;
 	}
 	.container_logo{
 		display: flex;
@@ -16,8 +17,9 @@
 	}
 	.nav_button-container{
 		display: flex;
-		height: 20px;
+		height: 40px;
 		justify-content: space-between;
+		padding: 10px 0;
 	}
 	.nav_button-container h2{
 		flex: 1;
@@ -35,7 +37,7 @@
 		background-color: var(--color-principal);
 		position: fixed;
 		left: 0;
-		top: 100px;
+		top: 120px;
 		width: 100%;
 		padding: 20px 0;
 		height: calc(100% - 100px);
@@ -56,6 +58,28 @@
 	.portada h1{
 		height: 40px;
 		font-size: 4.5em;
+	}
+	article{
+		flex-direction: column;
+		height: 100%;
+	}
+	.container_mapa , .container_formulario{
+		margin: 15px 0;
+		width: 100%;
+	}
+	.container_mapa{
+		height: 350px;
+	}
+	.formulario{
+		font-size: 1rem;
+	}
+	.form_section{
+		margin: 2px;
+		padding: 4px;
+	}
+	.form_section button{
+		font-size: 1rem;
+		padding: 10px;
 	}
 	footer{
 		background: var(--color-secundaria);
