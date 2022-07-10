@@ -6,7 +6,7 @@
     // 
 // Scripts
 //
-let pokemones_utilizar = 50
+let pokemones_utilizar = 100
 let codigo = []
 let nombre = []
 let altura = []
