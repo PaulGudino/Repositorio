@@ -6,7 +6,7 @@
     // 
 // Scripts
 //
-let pokemones_utilizar = 20
+let pokemones_utilizar = 50
 let codigo = []
 let nombre = []
 let altura = []
@@ -54,21 +54,13 @@ const fetchdata = async(id) =>{
 }
 
 const rellenarCard = (pokemon) =>{
-    const flex = document.querySelector(".flex")
-    const template = document.querySelector("#template-card").content
-    const clone = template.cloneNode(true)
-    const fragment = document.createDocumentFragment()
-
-    clone.querySelector(".card-body-img").setAttribute("src", pokemon.img)
-    clone.querySelector(".card-body-title").innerHTML = `${pokemon.nombre} <span>${pokemon.hp} hp</span>`
-    clone.querySelector(".card-body-text").textContent = "Exp " + pokemon.experiencia
+    document.querySelector(".card-body-img").setAttribute("src", pokemon.img)
+    document.querySelector(".card-body-title").innerHTML = `${pokemon.nombre} <span>${pokemon.hp} hp</span>`
+    document.querySelector(".card-body-text").textContent = "Exp " + pokemon.experiencia
 
     document.querySelectorAll(".card-nueva")[0].textContent = pokemon.ataque;
     document.querySelectorAll(".card-nueva")[1].textContent = pokemon.defensa;
     document.querySelectorAll(".card-nueva")[2].textContent = pokemon.velocidad;
-
-    fragment.appendChild(clone)
-    flex.appendChild(fragment)
 }
 
 fetchdata_tabla = async(id) =>{
@@ -112,9 +104,35 @@ const llenar_tabla = () =>{
     }
 }
 
+var boton_busqueda = document.getElementById("Boton_Busqueda")
+var numero = 0
+
+valor_pokemon = (valor) => {
+    if(valor > pokemones_utilizar){
+        alert("Solo hay "+pokemones_utilizar+" Pokemones" )
+        const random = getRamdomInt(1,pokemones_utilizar+1)
+        numero = random
+    }else{
+        numero = valor
+    }
+    
+}
+
+
 document.addEventListener("DOMContentLoaded", async()=>{
-    const random = getRamdomInt(1,pokemones_utilizar+1)
-    await fetchdata(random)
+
+    boton_busqueda.addEventListener('click', async(event) => {
+        if (numero != 0){
+            await fetchdata(numero)
+        }
+        window.scroll(0, 0);
+    });
+
+    if (numero == 0){
+        const random = getRamdomInt(1,pokemones_utilizar+1)
+        await fetchdata(random)
+    }
+
     for(let x = 1 ;  x < pokemones_utilizar +1 ; x ++){
         await fetchdata_tabla(x)
    }

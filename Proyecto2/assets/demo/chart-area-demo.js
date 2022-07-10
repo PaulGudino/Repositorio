@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
         datasets: [{
           label: "Cantidad:",
           lineTension: 0.3,
-          backgroundColor: "#3FC9D1",
+          backgroundColor: "#aaaaaa",
           borderColor: "rgba(2,117,216,1)",
           pointRadius: 5,
           pointBackgroundColor: "rgba(2,117,216,1)",
