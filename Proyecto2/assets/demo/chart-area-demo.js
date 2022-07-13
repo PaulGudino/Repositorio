@@ -3,10 +3,7 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
-let tipos = []
-let counts = {}
-let tipos_claves = []
-let tipos_cantidad = []
+
 
 fetchdata_grafica = async(id) =>{
   try {

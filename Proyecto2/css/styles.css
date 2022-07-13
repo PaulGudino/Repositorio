@@ -11829,3 +11829,10 @@ input[type=number] { -moz-appearance:textfield; }
   80% { top: -20px }
   100% { top: 0 }
 }
+
+select {
+  border: 1px solid #000; 
+  cursor: pointer;
+  padding: 2px;
+  vertical-align: middle;
+}

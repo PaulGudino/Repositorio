@@ -6,7 +6,7 @@
     // 
 // Scripts
 //
-let pokemones_utilizar = 100
+let pokemones_utilizar = 75
 let codigo = []
 let nombre = []
 let altura = []
@@ -14,6 +14,11 @@ let peso = []
 let atk_esp = []
 let def_esp = []
 let s_altura = 0, s_peso = 0, s_atkesp = 0, s_defesp = 0
+
+let tipos = []
+let counts = {}
+let tipos_claves = []
+let tipos_cantidad = []
 
 const promedio = async() =>{
     for (let i = 0; i < pokemones_utilizar; i++) {
@@ -63,46 +68,6 @@ const rellenarCard = (pokemon) =>{
     document.querySelectorAll(".card-nueva")[2].textContent = pokemon.velocidad;
 }
 
-fetchdata_tabla = async(id) =>{
-    try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        const data = await res.json()
-        const pokemon = {
-            codigo: data.id,
-            nombre : data.name,
-            altura: data.height/10,
-            peso: data.weight/10,
-            atk_spc : data.stats[3].base_stat,
-            def_spc : data.stats[4].base_stat
-        }
-        InformacionPokemon(pokemon)
-    } catch (error) {
-        console.log(error)
-    }
-}
-InformacionPokemon = (pokemon) =>{
-    codigo.push(pokemon.codigo)
-    nombre.push(pokemon.nombre)
-    atk_esp.push(pokemon.atk_spc)
-    def_esp.push(pokemon.def_spc)
-    peso.push(pokemon.peso)
-    altura.push(pokemon.altura)
-}
-
-
-const llenar_tabla = () =>{
-    for(let elemento = 0; elemento < pokemones_utilizar; elemento++){
-        plantilla =     `<tr>
-                        <td>${codigo[elemento]}</td>
-                        <td>${nombre[elemento]}</td>
-                        <td>${altura[elemento]}</td>
-                        <td>${peso[elemento]}</td>
-                        <td>${atk_esp[elemento]}</td>
-                        <td>${def_esp[elemento]}</td>
-                        </tr>`;
-        document.getElementById('tableBody').innerHTML += plantilla
-    }
-}
 
 var boton_busqueda = document.getElementById("Boton_Busqueda")
 var numero = 0
