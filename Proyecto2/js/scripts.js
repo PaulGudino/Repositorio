@@ -6,7 +6,7 @@
     // 
 // Scripts
 //
-let pokemones_utilizar = 75
+let pokemones_utilizar = 100
 let codigo = []
 let nombre = []
 let altura = []
@@ -70,6 +70,7 @@ const rellenarCard = (pokemon) =>{
 
 
 var boton_busqueda = document.getElementById("Boton_Busqueda")
+var input_busqueda = document.getElementById("Busqueda")
 var numero = 0
 
 valor_pokemon = (valor) => {
@@ -77,6 +78,7 @@ valor_pokemon = (valor) => {
         alert("Solo hay "+pokemones_utilizar+" Pokemones" )
         const random = getRamdomInt(1,pokemones_utilizar+1)
         numero = random
+        input_busqueda.value = " "
     }else{
         numero = valor
     }
@@ -91,6 +93,14 @@ document.addEventListener("DOMContentLoaded", async()=>{
             await fetchdata(numero)
         }
         window.scroll(0, 0);
+        input_busqueda.value = " "
+    });
+
+    
+    input_busqueda.addEventListener("keydown", (event) => {
+        if (event.key == "Enter") {
+            event.preventDefault();
+        }
     });
 
     if (numero == 0){
