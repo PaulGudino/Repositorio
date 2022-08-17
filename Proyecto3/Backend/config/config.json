@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "pgudino2002",
+    "password": "root",
     "database": "ferrecar",
     "host": "127.0.0.1",
     "dialect": "mysql"

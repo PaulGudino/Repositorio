@@ -16,6 +16,15 @@ export class ArticulosComponent implements OnInit {
   constructor(private productoService: ProductoService) { }
   objectKeys: any;
 
+  filtrado(categoria:number){
+    this.productoService.obtenerProductosFiltrado(categoria).subscribe(respuesta => {
+      this.productos = respuesta as any;
+    })
+  }
+  aniadir(id:number){
+    alert(id)
+  }
+
   ngOnInit(): void {
     this.productoService.obtenerProductos().subscribe(respuesta => {
       this.productos = respuesta as any;
@@ -24,5 +33,7 @@ export class ArticulosComponent implements OnInit {
       this.categorias = respuesta as any;
     })
   }
+
+
 
 }
