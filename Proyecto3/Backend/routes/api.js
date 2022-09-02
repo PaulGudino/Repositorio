@@ -35,8 +35,25 @@ router.get('/categoria', function(req, res, next) {
   })  
   .catch(error => res.status(400).send(error)) 
   });
-
-router.get('/productos/:categoria', function(req, res, next){
+  router.get('/categoria/:id', function(req, res, next) {
+    Categoria.findOne({  
+      where: { id: req.params.id }
+  })  
+  .then(productos => {  
+      res.json(productos);  
+  })  
+  .catch(error => res.status(400).send(error)) 
+  });
+router.get('/productos/:id', function(req, res, next){
+  Producto.findOne({
+    where: { id: req.params.id }
+  })
+  .then(producto => {
+    res.json(producto);
+  })
+  .catch(error => res.status(400).send(error))
+})
+router.get('/productos/categoria/:categoria', function(req, res, next){
   Producto.findAll({
     where: { categoria: req.params.categoria }
   })
@@ -45,5 +62,4 @@ router.get('/productos/:categoria', function(req, res, next){
   })
   .catch(error => res.status(400).send(error))
 })
-
 module.exports = router;

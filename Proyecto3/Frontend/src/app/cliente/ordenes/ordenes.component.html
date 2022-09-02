@@ -1,0 +1,36 @@
+<section>
+    <div>
+        <app-menu></app-menu>
+    </div>
+    <div class="flex-column d-flex align-items-center">
+      <mat-card id= "body_pro" class="example-card" *ngFor="let orden of ordenes |keyvalue">
+        <div class="row">
+          <div class="col">
+            <mat-card-header class="text-center">
+              <mat-card-title>Número de Factura #{{orden.value.id}}</mat-card-title>
+              <mat-card-subtitle>Producto{{orden.value.producto}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="text-center">
+              <p>
+                Cantidad: {{orden.value.cantidad}} <br>
+                Total: {{orden.value.precio}}
+              </p>
+  
+            </mat-card-content>
+          </div>
+          <div class="col">
+            <div *ngIf="orden.value.entregado; else falso">
+              <a href="#" class="btn btn-danger btn-lg disabled" role="button" aria-disabled="true">Por entregar</a>
+            </div>
+            <ng-template #falso>
+              <div>
+                <a href="#" class="btn btn-success btn-lg disabled" role="button" aria-disabled="true">Entregado</a>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+          
+      </mat-card>   
+    </div> 
+    
+</section>

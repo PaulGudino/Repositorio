@@ -22,6 +22,7 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdenesComponent } from './cliente/ordenes/ordenes.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ArticulosComponent,
     MenuComponent,
-    CarritoComponent
+    CarritoComponent,
+    OrdenesComponent
   ],
   imports: [
     BrowserModule,
