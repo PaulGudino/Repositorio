@@ -5,21 +5,20 @@
             <input type="checkbox" id="chk" aria-hidden="true">
     
                 <div class="signup">
-                    <form>
+                    <form [formGroup]="registroFormulario" (submit)="registrar()">
                         <label for="chk" aria-hidden="true">Registro</label>
-                        <input type="text" name="txt" placeholder="Usuario" required="">
-                        <input type="email" name="email" placeholder="Email" required="">
-                        <input type="password" name="pswd" placeholder="Contraseña" required="">
-                        <button>Registrar</button>
+                        <input type="text" formControlName="nombre" placeholder="Usuario" required="">
+                        <input type="password" formControlName="contraseña" placeholder="Contraseña" required="">
+                        <button type="submit" class="wide">Registrar</button>
                     </form>
                 </div>
     
                 <div class="login">
-                    <form>
+                    <form [formGroup] = "sesionFormulario" (submit)="ingresar()">
                         <label for="chk" aria-hidden="true">Login</label>
-                        <input type="email" name="email" placeholder="Email" required="">
-                        <input type="password" name="pswd" placeholder="Contraseña" required="">
-                        <button routerLink="">Login</button>
+                        <input type="text" formControlName="usuario" placeholder="Usuario" required="">
+                        <input type="password" formControlName="contraseña" placeholder="Contraseña" required="">
+                        <button type="submit" class="wide"> Login </button>
                     </form>
                 </div>
         </div>

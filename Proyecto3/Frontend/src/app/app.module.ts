@@ -23,6 +23,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { CarritoComponent } from './cliente/carrito/carrito.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OrdenesComponent } from './cliente/ordenes/ordenes.component';
+import { ApiRestComponent } from './api-rest/api-rest.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { OrdenesComponent } from './cliente/ordenes/ordenes.component';
     ArticulosComponent,
     MenuComponent,
     CarritoComponent,
-    OrdenesComponent
+    OrdenesComponent,
+    ApiRestComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,8 @@ import { OrdenesComponent } from './cliente/ordenes/ordenes.component';
     MatOptionModule,
     MatGridListModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

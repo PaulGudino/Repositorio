@@ -14,14 +14,14 @@
         <mat-card id= "body_pro" class="example-card" *ngFor="let producto of productos">
             <mat-card-header>
               <mat-card-title>{{producto.nombre}}</mat-card-title>
-              <mat-card-subtitle>{{producto.categoria}}</mat-card-subtitle>
+              <mat-card-subtitle>Categoria: {{producto.categoria}}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image src="{{producto.imagen}}" alt="Photo of a Shiba Inu">
             <mat-card-content>
               <p>
-                {{producto.marca}}
+                Fabircado por: {{producto.marca}}
               </p>
-              <button (click)="aniadir(producto.id)"><i class="fa-solid fa-cart-arrow-down"></i>Añadir al carrito</button>
+              <button class="carrito" (click)="aniadir(producto.id)"><i class="fa-solid fa-cart-arrow-down"></i>Añadir al carrito</button>
             </mat-card-content>
           </mat-card>
           

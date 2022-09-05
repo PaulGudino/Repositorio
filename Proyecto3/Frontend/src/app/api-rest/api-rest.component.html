@@ -1,0 +1,19 @@
+<section >
+    <div class="boton pt-2">
+      <button type="button" class="btn btn-light" data-bs-toggle="button" aria-pressed="false" autocomplete="off" routerLink ="/bienvenida">Regresar</button>
+    </div>
+    <div class=" letra d-flex justify-content-center pt-2">
+        <h1> Métodos Api Rest</h1>
+    </div>
+    <div class="flex-column d-flex align-items-center">
+        <div class="card border-light mb-3" *ngFor="let metodo of metodos">
+            <div class="card-header titulo">{{metodo.nombre}}()</div>
+            <div class="card-body">
+              <p class="card-text">{{metodo.descripcion}}</p>
+            </div>
+          </div>
+    </div> 
+    
+    
+    
+</section>

@@ -2,20 +2,22 @@
     <div>
         <app-menu></app-menu>
     </div>
-    <div class="flex-column d-flex align-items-center">
-        <mat-card id= "body_pro" class="example-card" *ngFor="let producto of carrito2">
+    <div class="flex-column d-flex align-items-center" *ngFor="let producto of carrito2 ; let i = index">
+        <mat-card id= "body_pro" class="example-card">
             <mat-card-header>
-              <mat-card-title>{{producto.nombre}}</mat-card-title>
-              <mat-card-subtitle>{{producto.producto}}</mat-card-subtitle>
+              <mat-card-title>{{carrito2[i].nombre}}</mat-card-title>
+              <mat-card-subtitle>{{carrito2[i].producto}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="{{producto.imagen}}" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                {{producto.marca}}
-              </p>
-              <button><i class="fa-solid fa-cart-arrow-down"></i> Eliminar</button>
-            </mat-card-content>
+            <div class="container_img">
+              <img mat-card-image src="{{carrito2[i].imagen}}" alt="Photo of a Shiba Inu">
+              <mat-card-content >
+                <button (click)="eliminar(claves[i])"><i class="fa-solid fa-cart-arrow-down"></i> Eliminar</button>
+                <br>
+                <button><i class="fa-solid fa-cart-arrow-down"></i> Pedir</button>
+              </mat-card-content>
+            </div> 
+            
           </mat-card>
-          
     </div> 
+
 </section>

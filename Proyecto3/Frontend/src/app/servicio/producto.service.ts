@@ -27,21 +27,31 @@ export class ProductoService {
   obtenerUsuarios() {
     return this.http.get('http://localhost:3000/api/usuario')
     }
+  
+  crearUsuario(usuario:any){
+    return this.http.post('http://localhost:3000/api/usuario', usuario)
+  }
 
   agregarCarrito(carrito:Carrito){
       this.http.post('https://proyecto-dawm-default-rtdb.firebaseio.com/carrito.json',carrito).subscribe(
         respuesta => console.log(respuesta) )
     }
 
-  obtenerCarrito(id:number) {
-    return this.http.get('https://proyecto-dawm-default-rtdb.firebaseio.com/carrito.json?orderBy=%22cliente%22&equalTo='+id.toString())
+  eliminarCarrito(id:number){
+      this.http.delete('https://proyecto-dawm-default-rtdb.firebaseio.com/carrito/'+id+'.json').subscribe(
+        respuesta => console.log(respuesta) )
+  }
+
+  obtenerCarrito() {
+    return this.http.get('https://proyecto-dawm-default-rtdb.firebaseio.com/carrito.json')
   }
 
   obtenerOrdenes() {
     return this.http.get('https://proyecto-dawm-default-rtdb.firebaseio.com/collection.json')
     }
 
-  obtenerOrdenesCliente(id:number) {
-    return this.http.get('https://proyecto-dawm-default-rtdb.firebaseio.com/collection.json?orderBy=%22cliente%22&equalTo='+id.toString())
+  obtenerOrdenesProducto(id:number) {
+    return this.http.get('https://proyecto-dawm-default-rtdb.firebaseio.com/collection.json?orderBy=%22producto%22&equalTo='+id.toString())
     }
-}
+  
+}   

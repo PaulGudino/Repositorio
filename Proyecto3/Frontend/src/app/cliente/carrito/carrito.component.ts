@@ -10,22 +10,38 @@ import { ProductoService } from '../../servicio/producto.service';
 export class CarritoComponent implements OnInit {
   carrito: any[] = [];
   carrito2: Carrito[] = [];
+  claves: any[] = [];
+  
 
   constructor(private productoService: ProductoService) { }
   objectKeys: any;
 
   ngOnInit(): void {
-    this.productoService.obtenerCarrito(1).subscribe(respuesta => {
+    this.productoService.obtenerCarrito().subscribe(respuesta => {
       this.carrito = respuesta as any;
 
       for (var clave in this.carrito) {
         if (this.carrito.hasOwnProperty(clave)) {
+          this.claves.push(clave);
           this.carrito2.push(this.carrito[clave]);
         }
       }
-      console.log(this.carrito2);  
     })
     
+  }
+
+  wait(timeToWait: number){
+    return new Promise(resolve => {
+      setTimeout(()=>{
+        resolve(resolve);
+      }, timeToWait);
+    });
+  }
+
+  async eliminar(producto:number){
+    this.productoService.eliminarCarrito(producto);
+    await this.wait(1000); 
+    window.location.reload();
   }
 
 }
