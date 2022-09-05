@@ -30,6 +30,10 @@ router.post('/usuario', function(req, res, next) {
 router.get('/productos', function(req, res, next) {
   Producto.findAll({  
     attributes: { exclude: ["updatedAt"] },
+    include: [{
+        model: Categoria,
+        attributes: { exclude: ["updatedAt", "createdAt"] }
+    }]
 })  
 .then(productos => {  
     res.json(productos);  
@@ -66,7 +70,7 @@ router.get('/productos/:id', function(req, res, next){
 })
 router.get('/productos/categoria/:categoria', function(req, res, next){
   Producto.findAll({
-    where: { categoria: req.params.categoria }
+    where: { id_categoria: req.params.categoria }
   })
   .then(producto => {
     res.json(producto);

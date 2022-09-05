@@ -11,12 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      producto.belongsTo(models.categoria, {
+        foreignKey: 'id',
+        targetKey: 'id',
+      });
     }
   }
   producto.init({
     nombre: DataTypes.STRING,
     marca: DataTypes.STRING,
-    categoria: DataTypes.INTEGER,
+    id_categoria: DataTypes.INTEGER,
     imagen: DataTypes.STRING
   }, {
     sequelize,

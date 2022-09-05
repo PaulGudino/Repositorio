@@ -30,7 +30,7 @@ module.exports = {
             nombre: producto['nombre'],
             id: i, 
             marca: producto['marca'], 
-            categoria: producto['categoria'],
+            id_categoria: producto['categoria'],
             imagen: producto['imagen'],
             createdAt: new Date(),  
             updatedAt: new Date()  

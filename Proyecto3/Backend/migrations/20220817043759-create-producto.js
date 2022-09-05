@@ -14,8 +14,14 @@ module.exports = {
       marca: {
         type: Sequelize.STRING
       },
-      categoria: {
-        type: Sequelize.INTEGER
+      id_categoria: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'categoria',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       imagen: {
         type: Sequelize.STRING

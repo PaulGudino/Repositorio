@@ -21,3 +21,14 @@
     align-items: center;
     flex-direction: column;
 }
+.carrito{
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    color : red;
+    font-size: 15px;
+  }
+  .carrito:hover{
+    background-color: red;
+    color : #fff;
+  }
